@@ -21,7 +21,7 @@ defer terraform.Destroy(t, terraformOptions)
 terraform.InitAndApply(t, terraformOptions)
 
 expected_app_service_default_hostname := "https://beoecomdev-appservice.azurewebsites.net"
-expepcted_app_service_name := "beoecomdev-appsevice"
+expepcted_app_service_name := "beoecomdev-appservice"
 
 actual_app_service_name := terraform.Output(t, terraformOptions, "app_service_name")
 actual_app_service_hostname := terraform.Output(t, terraformOptions, "app_service_default_hostname")
