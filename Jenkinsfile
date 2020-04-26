@@ -21,8 +21,8 @@ pipeline {
 		stage('Testing') { 
 			steps {
 				script { 
-					def root = tool name: 'Go'
-					withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
+					def root = tool 'Go'
+					//withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
 					sh 'go version'
 						dir("terratest-tutorial/test"){         // test dir
 							sh 'pwd'
