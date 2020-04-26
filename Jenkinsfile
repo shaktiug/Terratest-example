@@ -29,7 +29,7 @@ pipeline {
 							sh 'go test -v'  // put test  here
 						}
 
-					}
+					//}
 				}
 			}
 		}
