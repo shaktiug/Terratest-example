@@ -23,6 +23,7 @@ pipeline {
 				script { 
 					def root = tool 'Go'
 					//withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
+					env.PATH = "${Go}:${env.PATH}"
 					sh 'go version'
 						dir("terratest-tutorial/test"){         // test dir
 							sh 'pwd'
