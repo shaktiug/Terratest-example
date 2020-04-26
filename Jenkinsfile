@@ -14,6 +14,7 @@ pipeline {
 					env.PATH = "${tfHome}:${env.PATH}"
 				}
 				sh 'terraform --version'
+				sh 'java -version'
 			}
 		}
 
