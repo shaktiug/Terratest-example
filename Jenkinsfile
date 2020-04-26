@@ -10,7 +10,7 @@ pipeline {
 			steps {
 				script {
 					def tfHome = tool 'Terraform'
-					def jdk = tool 'jdk8'
+					def jdk = tool 'jdk'
 					env.PATH = "${tfHome}:${env.PATH}"
 				}
 				sh 'terraform --version'
@@ -23,7 +23,7 @@ pipeline {
 					def root = tool name: 'Go'
 					withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
 					sh 'go version'
-						dir("test"){         // test dir
+						dir("terratest-tutorial/test"){         // test dir
 							sh 'pwd'
 							sh 'go test -v'  // put test  here
 						}
