@@ -17,12 +17,12 @@ import (
 )
 
 const grant_type string = "client_credentials"
-const client_id string = "9f4c2aac-9db0-444b-90cb-988d0138e4dc"
-const client_secret string = "O9bTKN:HQ6b=Zq?xnr.PCCq50wx3L/ev"
+const client_id string = ""
+const client_secret string = ""
 const resource string = "https://management.azure.com"
 const redirect_uri string = "https://ShaktiServicePrincipal"
-const tenant_id string = "29425ebd-9122-4d2b-aeaa-1257aec8b162"
-const subscription_id string = "08896c78-cdb8-472b-bef3-b474be3e57fc"
+const tenant_id string = ""
+const subscription_id string = ""
 const api_endpoint string = "https://login.microsoftonline.com/29425ebd-9122-4d2b-aeaa-1257aec8b162/oauth2/token"
 const appid string = client_id
 const rg string = "beoecomtest"
