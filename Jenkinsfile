@@ -26,6 +26,7 @@ pipeline {
 					sh 'go version'
 						dir("terratest-tutorial/test"){         // test dir
 							sh 'pwd'
+							sh 'dep ensure'
 							sh 'go test -v'  // put test  here
 						}
 
