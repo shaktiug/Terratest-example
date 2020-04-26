@@ -24,7 +24,7 @@ pipeline {
 					def root = tool 'Go'
 					//withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
 					sh 'go version'
-						dir("terratest-tutorial/test"){         // test dir
+						dir("/root/go/src/terratest-tutorial/test/"){         // test dir
 							sh 'pwd'
 							sh 'sudo /root/go/bin/dep ensure'
 							sh 'go test -v'  // put test  here
