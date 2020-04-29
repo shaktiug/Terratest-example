@@ -26,6 +26,7 @@ node {
                                                         sh 'pwd'
                                                         sh 'sudo /root/go/bin/dep ensure'
                                                         sh 'go test -v'  // put test  here
+							}
                                                 }
 
                                         }
