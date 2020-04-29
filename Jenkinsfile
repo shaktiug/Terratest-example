@@ -1,8 +1,8 @@
 node {
-        ws('${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/src') {
+        ws("${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/src") {
             withEnv(['GOPATH=${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}']) {
                 env.PATH="${GOPATH}/bin:${env.PATH}"
-
+		echo '${GOPATH}'
                 stage ('Check out Git files'){
                         checkout scm
                 }
