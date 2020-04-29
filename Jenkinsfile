@@ -1,7 +1,7 @@
 node {
-        ws("${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/src") {
-            withEnv(["GOPATH=${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"]) {
-                env.PATH="${GOPATH}/bin:$PATH"
+        ws('${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/src') {
+            withEnv(['GOPATH=${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}']) {
+                env.PATH="${GOPATH}/bin:${env.PATH}"
 
                 stage ('Checkking out Git files'){
                         echo 'Checking out SCM'
@@ -21,7 +21,7 @@ node {
                                 script {
                                         def root = tool 'Go'
                                         sh 'go version'
-                                                dir("terratest-tutorial/test/"){         // test dir
+                                                dir('terratest-tutorial/test/'){         // test dir
                                                         sh 'pwd'
                                                         sh 'sudo /root/go/bin/dep ensure'
                                                         sh 'go test -v'  // put test  here
