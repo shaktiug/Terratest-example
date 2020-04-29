@@ -3,8 +3,7 @@ node {
             withEnv(['GOPATH=${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}']) {
                 env.PATH="${GOPATH}/bin:${env.PATH}"
 
-                stage ('Checkking out Git files'){
-                        echo 'Checking out SCM'
+                stage ('Check out Git files'){
                         checkout scm
                 }
                 stage ('Prepare the Environment') {
