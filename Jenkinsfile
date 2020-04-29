@@ -19,6 +19,8 @@ node {
                 stage('Testing') {
                                 script {
                                         def root = tool 'Go'
+					withEnv(["GOPATH=${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"]) {
+			                env.PATH="'${GOPATH}/bin:${env.PATH}'"
                                         sh 'go version'
                                                 dir('terratest-tutorial/test/'){         // test dir
                                                         sh 'pwd'
